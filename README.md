@@ -188,7 +188,7 @@ import StringFloatRange from "@tjmora/ts-range-types"
 
 const myNum21: StringFloatRange<0, 1, 3> // can take string float values from "0.000" to "1.000"
 const myNum22: StringFloatRange<[14], 8, 1> // can take string float values from "-14.0" to "8.0"
-const myNum23: StringFloatRange[[23], [14], 2]> // can take string float values from "-23.00" to "-14.00"
+const myNum23: StringFloatRange<[23], [14], 2> // can take string float values from "-23.00" to "-14.00"
 ```
 
 
