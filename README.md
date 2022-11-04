@@ -11,14 +11,16 @@ npm i @tjmora/ts-range-types
 
 ### Usage
 
+
 #### `PositiveIntLessThan<N>` 
 
 This type matches all positive integers, including `0`, below `N`.
 This type works perfectly, except when N is too large.
 
 ```typescript
-const myNum1: PositiveIntLessThan<21>; // can take int values from 0 to 20
+const myNum1: PositiveIntLessThan<21> // can take int values from 0 to 20
 ```
+
 
 #### `PositiveIntRange<Min, ExclusiveMax>` 
 
@@ -26,8 +28,11 @@ This type matches all positive integers from `Min` to below the
 `ExclusiveMax`. This type works perfectly, except when the range is too large.
 
 ```typescript
-const myNum2: PositiveIntRange<123,456>; // can take int values from 123 to 455
+import PositiveIntRange from "@tjmora/ts-range-types"
+
+const myNum2: PositiveIntRange<123,456> // can take int values from 123 to 455
 ```
+
 
 #### `StringIntRange<Min, Max>` 
 
@@ -38,10 +43,13 @@ This type works perfectly, except when the range is too large.
 For a range that is too large, try using `StringIntRange<Min, Max, DigitOffset>` instead.
 
 ```typescript
-const myNum3: StringIntRange<45, 126>; // can take string int values from "45" to "126"
-const myNum4: StringIntRange<[25], 54>; // can take string int values from "-25" to "54"
-const myNum5: StringIntRange<[167], [72]>; // can take string int values from "-167" to "-72"
+import StringIntRange from "@tjmora/ts-range-types"
+
+const myNum3: StringIntRange<45, 126> // can take string int values from "45" to "126"
+const myNum4: StringIntRange<[25], 54> // can take string int values from "-25" to "54"
+const myNum5: StringIntRange<[167], [72]> // can take string int values from "-167" to "-72"
 ```
+
 
 #### `IntRange<Min, Max>`
 
@@ -52,10 +60,13 @@ This type doesn't work sometimes as Typescript have a hard time infering custom 
 number literals. Use `StringIntRange<Min, Max>` for a more reliable type.
 
 ```typescript
-const myNum6: IntRange<45, 126>; // can take string int values from 45 to 126
-const myNum7: IntRange<[25], 54>; // can take string int values from -25 to 54
-const myNum8: IntRange<[167], [72]>; // can take string int values from -167 to -72
+import IntRange from "@tjmora/ts-range-types"
+
+const myNum6: IntRange<45, 126> // can take string int values from 45 to 126
+const myNum7: IntRange<[25], 54> // can take string int values from -25 to 54
+const myNum8: IntRange<[167], [72]> // can take string int values from -167 to -72
 ```
+
 
 #### `StringIntRange<Min, Max, DigitOffset>`
 
@@ -74,10 +85,13 @@ utility type recursions. However, this type may stop working if your range becom
 like if you set `DigitOffset` to `4`.
 
 ```typescript
-const myNum9: StringIntRange<3, 12, 2>; // can take string int values from "300" to "1200"
-const myNum10: StringIntRange<[46], 35, 1>; // can take string int values from "-460" to "350"
-const myNum11: StringIntRange<[3], [2], 3>; // can take string int values from "-3000" to "-2000"
+import StringIntRange from "@tjmora/ts-range-types"
+
+const myNum9: StringIntRange<3, 12, 2> // can take string int values from "300" to "1200"
+const myNum10: StringIntRange<[46], 35, 1> // can take string int values from "-460" to "350"ts-range-types
+const myNum11: StringIntRange<[3], [2], 3> // can take string int values from "-3000" to "-2000"
 ```
+
 
 #### `IntRange<Min, Max, DigitOffset>`
 
@@ -95,10 +109,13 @@ This type doesn't work sometimes as Typescript have a hard time infering custom 
 number literals. Use `StringIntRange<Min, Max>` for a more reliable type.
 
 ```typescript
-const myNum12: StringIntRange<3, 12, 2>; // can take int values from 300 to 1200
-const myNum13: StringIntRange<[46], 35, 1>; // can take int values from -460 to 350
-const myNum14: StringIntRange<[3], [2], 3>; // can take int values from -3000 to -2000
+import IntRange from "@tjmora/ts-range-types"
+
+const myNum12: StringIntRange<3, 12, 2> // can take int values from 300 to 1200
+const myNum13: StringIntRange<[46], 35, 1> // can take int values from -460 to 350
+const myNum14: StringIntRange<[3], [2], 3> // can take int values from -3000 to -2000
 ```
+
 
 #### `StringIntStepRange<Min, Max, LogStep>`
 
@@ -119,10 +136,13 @@ A `LogStep` of `2` represents multiples of 100. And so on.
 This type may stop working if your range becomes too large, like if you set `LogStep` to `4`.
 
 ```typescript
-const myNum15: StringIntStepRange<3, 12, 2>; // can take string int values of "300", "400", "500", up to "1200"
-const myNum16: StringIntStepRange<[46], 35, 1>; // can take string int values of "-460", "-450", "-440", up to "350"
-const myNum17: StringIntStepRange<[4], [2], 3>; // can take string int values of "-4000", "-3000" and "-2000" only
+import StringIntStepRange from "@tjmora/ts-range-types"
+
+const myNum15: StringIntStepRange<3, 12, 2> // can take string int values of "300", "400", "500", up to "1200"
+const myNum16: StringIntStepRange<[46], 35, 1> // can take string int values of "-460", "-450", "-440", up to "350"
+const myNum17: StringIntStepRange<[4], [2], 3> // can take string int values of "-4000", "-3000" and "-2000" only
 ```
+
 
 #### `IntStepRange<Min, Max, LogStep>`
 
@@ -144,10 +164,13 @@ This type doesn't work sometimes as Typescript have a hard time infering custom 
 number literals. Use `StringIntStepRange<Min, Max, LogStep>` for a more reliable type.
 
 ```typescript
-const myNum18: IntStepRange<3, 12, 2>; // can take int values of 300, 400, 500, up to 1200
-const myNum19: IntStepRange<[46], 35, 1>; // can take int values of -460, -450, -440, up to 350
-const myNum20: IntStepRange<[4], [2], 3>; // can take int values of -4000, -3000 and -2000 only
+import IntStepRange from "@tjmora/ts-range-types"
+
+const myNum18: IntStepRange<3, 12, 2> // can take int values of 300, 400, 500, up to 1200
+const myNum19: IntStepRange<[46], 35, 1> // can take int values of -460, -450, -440, up to 350
+const myNum20: IntStepRange<[4], [2], 3> // can take int values of -4000, -3000 and -2000 only
 ```
+
 
 #### `StringFloatRange<Min, Max, DecimalPlaces>`
 
@@ -161,10 +184,13 @@ This type may stop working if your range becomes too large, like if you set `Dec
 to `4`.
 
 ```typescript
-const myNum21: StringFloatRange<0, 1, 3>; // can take string float values from "0.000" to "1.000"
-const myNum22: StringFloatRange<[14], 8, 1>; // can take string float values from "-14.0" to "8.0"
-const myNum23: StringFloatRange[[23], [14], 2]; // can take string float values from "-23.00" to "-14.00"
+import StringFloatRange from "@tjmora/ts-range-types"
+
+const myNum21: StringFloatRange<0, 1, 3> // can take string float values from "0.000" to "1.000"
+const myNum22: StringFloatRange<[14], 8, 1> // can take string float values from "-14.0" to "8.0"
+const myNum23: StringFloatRange[[23], [14], 2]> // can take string float values from "-23.00" to "-14.00"
 ```
+
 
 #### `FloatRange<Min, Max, DecimalPlaces>`
 
