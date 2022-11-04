@@ -1,11 +1,19 @@
 {
   "name": "@tjmora/ts-range-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Range types for Typescript.",
   "main": "index.ts",
-  "scripts": {
-    "test": "npx tsc"
-  },
+  "keywords": [
+    "range types"
+  ],
   "author": "TJ Mora",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/tjmora/ts-ranged-types",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjmora/ts-range-types"
+  },
+  "bugs": {
+    "url": "https://github.com/tjmora/ts-ranged-types/issues"
+  }
 }
