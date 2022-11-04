@@ -1,0 +1,11 @@
+{
+  "name": "@tjmora/ts-range-types",
+  "version": "1.0.0",
+  "description": "Range types for Typescript.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npx tsc"
+  },
+  "author": "TJ Mora",
+  "license": "MIT"
+}
