@@ -1,17 +1,17 @@
-## @tjmora/ts-range-types
+# @tjmora/ts-range-types
 
 Range types for Typescript.
 
-### Installation
+## Installation
 
 ```
 npm i @tjmora/ts-range-types
 ```
 
 
-### Usage
+## Usage
 
-#### `PositiveIntLessThan<N>` 
+### `PositiveIntLessThan<N>` 
 
 This type matches all positive integers, including `0`, below `N`.
 This type works perfectly, except when N is too large.
@@ -23,7 +23,7 @@ import PositiveIntLessThan from "@tjmora/ts-range-types"
 let myNum1: PositiveIntLessThan<21>
 ```
 
-#### `PositiveIntRange<Min, ExclusiveMax>` 
+### `PositiveIntRange<Min, ExclusiveMax>` 
 
 This type matches all positive integers from `Min` to below the 
 `ExclusiveMax`. This type works perfectly, except when the range is too large.
@@ -35,7 +35,7 @@ import PositiveIntRange from "@tjmora/ts-range-types"
 let myNum2: PositiveIntRange<123,456>
 ```
 
-#### `StringIntRange<Min, Max>` 
+### `StringIntRange<Min, Max>` 
 
 This matches all string representing integers from `Min` to `Max`.
 The `Max` is inclusive. `Min` and `Max` can be negative but negative numbers should be 
@@ -56,7 +56,7 @@ let myNum4: StringIntRange<[25], 54>
 let myNum5: StringIntRange<[167], [72]>
 ```
 
-#### `IntRange<Min, Max>`
+### `IntRange<Min, Max>`
 
 This matches all integers from `Min` to `Max`. The `Max` is inclusive. 
 `Min` and `Max` can be negative but negative numbers should be 
@@ -77,7 +77,7 @@ let myNum7: IntRange<[25], 54>
 let myNum8: IntRange<[167], [72]>
 ```
 
-#### `StringIntRange<Min, Max, DigitOffset>`
+### `StringIntRange<Min, Max, DigitOffset>`
 
 This matches all string representing integers from `Min` as digit-offsetted to 
 `Max` as digit-offsetted. The `Max` is inclusive. `Min` and `Max` can be negative but 
@@ -106,7 +106,7 @@ let myNum10: StringIntRange<[46], 35, 1>
 let myNum11: StringIntRange<[3], [2], 3>
 ```
 
-#### `IntRange<Min, Max, DigitOffset>`
+### `IntRange<Min, Max, DigitOffset>`
 
 This matches all integers from `Min` as digit-offsetted to `Max` as digit-offsetted. 
 The `Max` is inclusive. `Min` and `Max` can be negative but 
@@ -134,7 +134,7 @@ let myNum13: StringIntRange<[46], 35, 1>
 let myNum14: StringIntRange<[3], [2], 3>
 ```
 
-#### `StringIntStepRange<Min, Max, LogStep>`
+### `StringIntStepRange<Min, Max, LogStep>`
 
 This matches all string representing certain base-10 multiples from `Min` as digit-offsetted to 
 `Max` as digit-offsetted. The `Max` is inclusive. `Min` and `Max` can be negative but 
@@ -167,7 +167,7 @@ let myNum16: StringIntStepRange<[46], 35, 1>
 let myNum17: StringIntStepRange<[4], [2], 3>
 ```
 
-#### `IntStepRange<Min, Max, LogStep>`
+### `IntStepRange<Min, Max, LogStep>`
 
 This matches the base-10 multiples from `Min` as digit-offsetted to 
 `Max` as digit-offsetted. The `Max` is inclusive. `Min` and `Max` can be negative but 
@@ -201,7 +201,7 @@ let myNum19: IntStepRange<[46], 35, 1>
 let myNum20: IntStepRange<[4], [2], 3>
 ```
 
-#### `StringFloatRange<Min, Max, DecimalPlaces>`
+### `StringFloatRange<Min, Max, DecimalPlaces>`
 
 This matches all string representing float numbers from `Min` to `Max` with the 
 specified number of `DecimalPlaces`. The `Max` is inclusive. `Min` and `Max` can be negative but 
@@ -225,7 +225,7 @@ let myNum22: StringFloatRange<[14], 8, 1>
 let myNum23: StringFloatRange<[23], [14], 2>
 ```
 
-#### `FloatRange<Min, Max, DecimalPlaces>`
+### `FloatRange<Min, Max, DecimalPlaces>`
 
 This is supposed to be the number literal version for `StringFloatRange<Min, Max, DecimalPlaces>` 
 but it doesn't work. The type is defined in the source code in the event that it works 
@@ -233,7 +233,7 @@ in the future. Typescript seems to have a hard time inferring custom types from 
 In the meantime, just use `StringFloatRange<Min, Max, DecimalPlaces>`.
 
 
-### Contributing
+## Contributing
 
 Contributions for the improvement of this library are welcome. However, be sure your 
 contributions adhere to the following:
