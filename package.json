@@ -1,6 +1,6 @@
 {
   "name": "@tjmora/ts-range-types",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Range types for Typescript.",
   "main": "index.ts",
   "keywords": [
