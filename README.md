@@ -13,7 +13,7 @@ npm i @tjmora/ts-range-types
 
 ### `PositiveIntLessThan<N>` 
 
-This type matches all positive integers, including `0`, below `N`.
+This type matches all positive integers, including 0, below `N`.
 This type works perfectly, except when N is too large.
 
 ```typescript
@@ -86,14 +86,14 @@ This matches all string representing integers from `Min` as digit-offsetted to
 negative numbers should be written in a bracket form (e.g., `[13]` means -13).
 
 `DigitOffset` represents the number of digit places the `Min` and `Max`
-get offsetted to the left. A `DigitOffset` of `0` is like multiplying `Min` and `Max` to 1.
-A `DigitOffset` of `1` is like multiplying `Min` and `Max` to 10.
-A `DigitOffset` of `2` is like multiplying `Min` and `Max` to 100.
-Maximum value for `DigitOffset` is `4`.
+get offsetted to the left. A `DigitOffset` of 0 is like multiplying `Min` and `Max` to 1.
+A `DigitOffset` of 1 is like multiplying `Min` and `Max` to 10.
+A `DigitOffset` of 2 is like multiplying `Min` and `Max` to 100.
+Maximum value for `DigitOffset` is 4.
 
 > **_NOTE:_** This type works better than the type that has no `DigitOffset` as this type 
 > require fewer utility type recursions. However, this type may stop working if your range 
-> becomes too large, like if you set `DigitOffset` to `4`.
+> becomes too large, like if you set `DigitOffset` to 4.
 
 ```typescript
 import StringIntRange from "@tjmora/ts-range-types"
@@ -115,10 +115,10 @@ The `Max` is inclusive. `Min` and `Max` can be negative but
 negative numbers should be written in a bracket form (e.g., `[13]` means -13).
 
 `DigitOffset` represents the number of digit places the `Min` and `Max`
-get offsetted to the left. A `DigitOffset` of `0` is like multiplying `Min` and `Max` to 1.
-A `DigitOffset` of `1` is like multiplying `Min` and `Max` to 10.
-A `DigitOffset` of `2` is like multiplying `Min` and `Max` to 100.
-Maximum value for `DigitOffset` is `4`.
+get offsetted to the left. A `DigitOffset` of 0 is like multiplying `Min` and `Max` to 1.
+A `DigitOffset` of 1 is like multiplying `Min` and `Max` to 10.
+A `DigitOffset` of 2 is like multiplying `Min` and `Max` to 100.
+Maximum value for `DigitOffset` is 4.
 
 > **_NOTE:_** This type doesn't work sometimes as Typescript have a hard time inferring custom 
 > types from number literals. Use `StringIntRange<Min, Max>` for a more reliable type.
@@ -143,19 +143,19 @@ This matches all string representing certain base-10 multiples from `Min` as dig
 negative numbers should be written in a bracket form (e.g., `[13]` means -13).
 
 `LogStep` means logarithmic step. It denotes the multiples for inclusion in the type.
-A `LogStep` of `0` is for multiples of 1.
-A `LogStep` of `1` is for multiples of 10.
-A `LogStep` of `2` is for multiples of 100.
-Maximum value for `LogStep` is `4`.
+A `LogStep` of 0 is for multiples of 1.
+A `LogStep` of 1 is for multiples of 10.
+A `LogStep` of 2 is for multiples of 100.
+Maximum value for `LogStep` is 4.
 
 However, `LogStep` also denotes the number of digit places the `Min` and `Max`
 get offsetted to the left.
-A `LogStep` of `0` is like multiplying `Min` and `Max` to 1.
-A `LogStep` of `1` is like multiplying `Min` and `Max` to 10.
-A `LogStep` of `2` is like multiplying `Min` and `Max` to 100.
+A `LogStep` of 0 is like multiplying `Min` and `Max` to 1.
+A `LogStep` of 1 is like multiplying `Min` and `Max` to 10.
+A `LogStep` of 2 is like multiplying `Min` and `Max` to 100.
 
 > **_NOTE:_** This type may stop working if your range becomes too large, like if you set 
-> `LogStep` to `4`.
+> `LogStep` to 4.
 
 ```typescript
 import StringIntStepRange from "@tjmora/ts-range-types"
@@ -177,16 +177,16 @@ This matches the base-10 multiples from `Min` as digit-offsetted to
 negative numbers should be written in a bracket form (e.g., `[13]` means -13).
 
 `LogStep` means logarithmic step. It denotes the multiples for inclusion in the type.
-A `LogStep` of `0` is for multiples of 1.
-A `LogStep` of `1` is for multiples of 10.
-A `LogStep` of `2` is for multiples of 100.
-Maximum value for `LogStep` is `4`.
+A `LogStep` of 0 is for multiples of 1.
+A `LogStep` of 1 is for multiples of 10.
+A `LogStep` of 2 is for multiples of 100.
+Maximum value for `LogStep` is 4.
 
 However, `LogStep` also denotes the number of digit places the `Min` and `Max`
 get offsetted to the left.
-A `LogStep` of `0` is like multiplying `Min` and `Max` to 1.
-A `LogStep` of `1` is like multiplying `Min` and `Max` to 10.
-A `LogStep` of `2` is like multiplying `Min` and `Max` to 100.
+A `LogStep` of 0 is like multiplying `Min` and `Max` to 1.
+A `LogStep` of 1 is like multiplying `Min` and `Max` to 10.
+A `LogStep` of 2 is like multiplying `Min` and `Max` to 100.
 
 > **_NOTE:_** This type doesn't work sometimes as Typescript have a hard time inferring custom 
 > types from number literals. Use `StringIntStepRange<Min, Max, LogStep>` for a more reliable 
@@ -211,10 +211,10 @@ This matches all string representing float numbers from `Min` to `Max` with the
 specified number of `DecimalPlaces`. The `Max` is inclusive. `Min` and `Max` can be negative but 
 negative numbers should be written in a bracket form (e.g., `[13]` means -13). The `Min` and 
 `Max` represents the whole part of the floating point number (to the left of the decimal point).
-The `DecimalPlaces` can take a minimum value of `1` and a maximum value of `4`.
+The `DecimalPlaces` can take a minimum value of 1 and a maximum value of 4.
 
 > **_NOTE:_** This type may stop working if your range becomes too large, like if you set 
-> `DecimalPlaces` to `4`.
+> `DecimalPlaces` to 4.
 
 ```typescript
 import StringFloatRange from "@tjmora/ts-range-types"
@@ -247,5 +247,5 @@ Conserve the utility type computations needed by Typescript as much as possible.
 This is the reason why negative `Min` or `Max` is represented with brackets (`[N]`) as 
 Typescript has easier time inferring from that kind of notation. A `-N` notation was 
 tried before but it resulted to more needed computations that made the types not work 
-sometimes. This is also the reason why negative zero `-0` is not excluded from the type 
-whenever `0` is within range. Excluding it can complicate the computations more.
+sometimes. This is also the reason why negative zero (-0) is not excluded from the type 
+whenever 0 is within range. Excluding it can complicate the computations more.
