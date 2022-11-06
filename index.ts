@@ -14,7 +14,7 @@ export type PositiveIntRange<
 
 export type Repeat<
   T extends Digit | string,
-  N extends 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+  N extends 0 | 1 | 2 | 3 | 4 
 > = N extends 0
   ? ``
   : N extends 1
@@ -27,7 +27,7 @@ export type Repeat<
   ? `${T}${T}${T}${T}`
   : never;
 
-export type VariableNumDigit<N extends 0 | 1 | 2 | 3 | 4> = N extends 0
+export type VariableNumberOfDigit<N extends 0 | 1 | 2 | 3 | 4> = N extends 0
   ? never
   : N extends 1
   ? `${Digit}`
@@ -43,7 +43,7 @@ export type VariableNumDigit<N extends 0 | 1 | 2 | 3 | 4> = N extends 0
       | `${Digit}`
   : never;
 
-export type VariableNumZero<N extends 0 | 1 | 2 | 3 | 4> = N extends 0
+export type VariableNumberOfZero<N extends 0 | 1 | 2 | 3 | 4> = N extends 0
   ? never
   : N extends 1
   ? `0`
@@ -67,8 +67,8 @@ export type StringIntRange<
     :
         | `-${Min[0]}${Repeat<"0", DigitOffset>}`
         | `-${PositiveIntLessThan<Min[0]>}${Repeat<Digit, DigitOffset>}`
-        | `-${VariableNumDigit<DigitOffset>}`
-        | `${VariableNumDigit<DigitOffset>}`
+        | `-${VariableNumberOfDigit<DigitOffset>}`
+        | `${VariableNumberOfDigit<DigitOffset>}`
         | `${PositiveIntLessThan<Exclude<Max, [number]>>}${Repeat<
             Digit,
             DigitOffset
@@ -136,23 +136,23 @@ export type StringFloatRange<
         | `-${PositiveIntRange<
             Max[0],
             Min[0]
-          >}.${VariableNumDigit<DecimalPlaces>}`
-        | `-${Min[0]}.${VariableNumZero<DecimalPlaces>}`
+          >}.${VariableNumberOfDigit<DecimalPlaces>}`
+        | `-${Min[0]}.${VariableNumberOfZero<DecimalPlaces>}`
     :
-        | `-${Min[0]}.${VariableNumZero<DecimalPlaces>}`
-        | `-${PositiveIntLessThan<Min[0]>}.${VariableNumDigit<DecimalPlaces>}`
+        | `-${Min[0]}.${VariableNumberOfZero<DecimalPlaces>}`
+        | `-${PositiveIntLessThan<Min[0]>}.${VariableNumberOfDigit<DecimalPlaces>}`
         | `${PositiveIntLessThan<
             Exclude<Max, [number]>
-          >}.${VariableNumDigit<DecimalPlaces>}`
-        | `${Exclude<Max, [number]>}.${VariableNumZero<DecimalPlaces>}`
+          >}.${VariableNumberOfDigit<DecimalPlaces>}`
+        | `${Exclude<Max, [number]>}.${VariableNumberOfZero<DecimalPlaces>}`
   : Max extends [number]
   ? never
   :
       | `${PositiveIntRange<
           Exclude<Min, [number]>,
           Exclude<Max, [number]>
-        >}.${VariableNumDigit<DecimalPlaces>}`
-      | `${Exclude<Max, [number]>}.${VariableNumZero<DecimalPlaces>}`;
+        >}.${VariableNumberOfDigit<DecimalPlaces>}`
+      | `${Exclude<Max, [number]>}.${VariableNumberOfZero<DecimalPlaces>}`;
 
 export type FloatRange<
   Min extends number | [number],
