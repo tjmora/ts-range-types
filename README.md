@@ -40,8 +40,9 @@ let myNum2: PositiveIntRange<123,456>
 This matches all string representing integers from `Min` to `Max`.
 The `Max` is inclusive. `Min` and `Max` can be negative but negative numbers should be 
 written in a bracket form (e.g., `[13]` means -13).
-This type works perfectly, except when the range is too large. 
-For a range that is too large, try using `StringIntRange<Min, Max, DigitOffset>` instead.
+
+> **_NOTE:_** This type works perfectly, except when the range is too large. 
+> For a range that is too large, try using `StringIntRange<Min, Max, DigitOffset>` instead.
 
 ```typescript
 import StringIntRange from "@tjmora/ts-range-types"
@@ -61,8 +62,9 @@ let myNum5: StringIntRange<[167], [72]>
 This matches all integers from `Min` to `Max`. The `Max` is inclusive. 
 `Min` and `Max` can be negative but negative numbers should be 
 written in a bracket form (e.g., `[13]` means -13).
-This type doesn't work sometimes as Typescript have a hard time inferring custom types from 
-number literals. Use `StringIntRange<Min, Max>` for a more reliable type.
+
+> **_NOTE:_** This type doesn't work sometimes as Typescript have a hard time inferring custom 
+> types from number literals. Use `StringIntRange<Min, Max>` for a more reliable type.
 
 ```typescript
 import IntRange from "@tjmora/ts-range-types"
@@ -89,9 +91,9 @@ A `DigitOffset` of `1` is like multiplying `Min` and `Max` to 10.
 A `DigitOffset` of `2` is like multiplying `Min` and `Max` to 100.
 Maximum value for `DigitOffset` is `4`.
 
-This type works better than the type that has no `DigitOffset` as this type require fewer 
-utility type recursions. However, this type may stop working if your range becomes too large, 
-like if you set `DigitOffset` to `4`.
+> **_NOTE:_** This type works better than the type that has no `DigitOffset` as this type 
+> require fewer utility type recursions. However, this type may stop working if your range 
+> becomes too large, like if you set `DigitOffset` to `4`.
 
 ```typescript
 import StringIntRange from "@tjmora/ts-range-types"
@@ -118,8 +120,8 @@ A `DigitOffset` of `1` is like multiplying `Min` and `Max` to 10.
 A `DigitOffset` of `2` is like multiplying `Min` and `Max` to 100.
 Maximum value for `DigitOffset` is `4`.
 
-This type doesn't work sometimes as Typescript have a hard time inferring custom types from 
-number literals. Use `StringIntRange<Min, Max>` for a more reliable type.
+> **_NOTE:_** This type doesn't work sometimes as Typescript have a hard time inferring custom 
+> types from number literals. Use `StringIntRange<Min, Max>` for a more reliable type.
 
 ```typescript
 import IntRange from "@tjmora/ts-range-types"
@@ -152,7 +154,8 @@ A `LogStep` of `0` is like multiplying `Min` and `Max` to 1.
 A `LogStep` of `1` is like multiplying `Min` and `Max` to 10.
 A `LogStep` of `2` is like multiplying `Min` and `Max` to 100.
 
-This type may stop working if your range becomes too large, like if you set `LogStep` to `4`.
+> **_NOTE:_** This type may stop working if your range becomes too large, like if you set 
+> `LogStep` to `4`.
 
 ```typescript
 import StringIntStepRange from "@tjmora/ts-range-types"
@@ -185,8 +188,9 @@ A `LogStep` of `0` is like multiplying `Min` and `Max` to 1.
 A `LogStep` of `1` is like multiplying `Min` and `Max` to 10.
 A `LogStep` of `2` is like multiplying `Min` and `Max` to 100.
 
-This type doesn't work sometimes as Typescript have a hard time inferring custom types from 
-number literals. Use `StringIntStepRange<Min, Max, LogStep>` for a more reliable type.
+> **_NOTE:_** This type doesn't work sometimes as Typescript have a hard time inferring custom 
+> types from number literals. Use `StringIntStepRange<Min, Max, LogStep>` for a more reliable 
+> type.
 
 ```typescript
 import IntStepRange from "@tjmora/ts-range-types"
@@ -209,8 +213,8 @@ negative numbers should be written in a bracket form (e.g., `[13]` means -13). T
 `Max` represents the whole part of the floating point number (to the left of the decimal point).
 The `DecimalPlaces` can take a minimum value of `1` and a maximum value of `4`.
 
-This type may stop working if your range becomes too large, like if you set `DecimalPlaces` 
-to `4`.
+> **_NOTE:_** This type may stop working if your range becomes too large, like if you set 
+> `DecimalPlaces` to `4`.
 
 ```typescript
 import StringFloatRange from "@tjmora/ts-range-types"
@@ -227,10 +231,11 @@ let myNum23: StringFloatRange<[23], [14], 2>
 
 ### `FloatRange<Min, Max, DecimalPlaces>`
 
-This is supposed to be the number literal version for `StringFloatRange<Min, Max, DecimalPlaces>` 
-but it doesn't work. The type is defined in the source code in the event that it works 
-in the future. Typescript seems to have a hard time inferring custom types from float numbers. 
-In the meantime, just use `StringFloatRange<Min, Max, DecimalPlaces>`.
+> **_NOTE:_** This is supposed to be the number literal version for 
+> `StringFloatRange<Min, Max, DecimalPlaces>` but it doesn't work. The type is defined in the 
+> source code in the event that it works in the future. Typescript seems to have a hard time 
+> inferring custom types from float numbers. In the meantime, just use 
+> `StringFloatRange<Min, Max, DecimalPlaces>`.
 
 
 ## Contributing
